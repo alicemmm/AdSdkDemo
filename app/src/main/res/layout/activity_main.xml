@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <com.perasia.mylibrary.BannerView
+    <com.perasia.mylibrary.LiBannerView
         android:id="@+id/about_banner"
         android:src="@mipmap/ic_launcher"
         android:layout_width="wrap_content"

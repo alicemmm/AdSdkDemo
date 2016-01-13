@@ -13,13 +13,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class PhoneInfo {
-    private static final String TAG = PhoneInfo.class.getSimpleName();
+public class LiPhoneInfo {
+    private static final String TAG = LiPhoneInfo.class.getSimpleName();
 
     private Context mContext;
     private TelephonyManager mPhoneManager;
 
-    public PhoneInfo(Context context) {
+    public LiPhoneInfo(Context context) {
         mContext = context;
         mPhoneManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
     }

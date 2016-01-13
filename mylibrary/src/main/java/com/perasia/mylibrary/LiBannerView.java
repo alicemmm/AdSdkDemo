@@ -5,13 +5,13 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 
-public class BannerView extends ImageView {
+public class LiBannerView extends ImageView {
 
-    public BannerView(Context context) {
+    public LiBannerView(Context context) {
         super(context);
     }
 
-    public BannerView(Context context, AttributeSet attrs) {
+    public LiBannerView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

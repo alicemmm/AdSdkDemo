@@ -5,9 +5,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.perasia.mylibrary.BannerView;
+import com.perasia.mylibrary.LiBannerView;
 import com.perasia.mylibrary.Cnxad;
-import com.perasia.mylibrary.PhoneInfo;
+import com.perasia.mylibrary.LiPhoneInfo;
 
 public class MainActivity extends Activity {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
     }
 
     private void init() {
-        PhoneInfo info = new PhoneInfo(mContext);
+        LiPhoneInfo info = new LiPhoneInfo(mContext);
         Log.e(TAG, "devices id: " + info.getDeviceId());
         Log.e(TAG, "getPhoneModule: " + info.getPhoneModule());
         Log.e(TAG, "getSerialNumber: " + info.getSerialNumber());
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
         Log.e(TAG, "getCpuInfo: " + info.getCpuInfo());
         Log.e(TAG, "getTotalMemory: " + info.getTotalMemory());
 
-        BannerView banner = (BannerView) findViewById(R.id.about_banner);
+        LiBannerView banner = (LiBannerView) findViewById(R.id.about_banner);
         Cnxad.setBanner(mContext, banner);
     }
 }

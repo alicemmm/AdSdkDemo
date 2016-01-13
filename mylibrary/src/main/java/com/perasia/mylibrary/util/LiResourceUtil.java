@@ -1,11 +1,11 @@
-package com.perasia.mylibrary;
+package com.perasia.mylibrary.util;
 
 
 import android.content.Context;
 
-public class ResourceUtil {
+public class LiResourceUtil {
 
-    public ResourceUtil(){
+    public LiResourceUtil(){
 
     }
 

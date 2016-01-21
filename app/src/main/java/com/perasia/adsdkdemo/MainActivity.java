@@ -5,8 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.perasia.mylibrary.LiBannerView;
 import com.perasia.mylibrary.Cnxad;
+import com.perasia.mylibrary.LiBannerView;
 import com.perasia.mylibrary.LiPhoneInfo;
 
 public class MainActivity extends Activity {
@@ -35,5 +35,9 @@ public class MainActivity extends Activity {
 
         LiBannerView banner = (LiBannerView) findViewById(R.id.about_banner);
         Cnxad.setBanner(mContext, banner);
+
+
     }
+
+
 }

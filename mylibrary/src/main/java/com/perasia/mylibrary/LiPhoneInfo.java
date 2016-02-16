@@ -60,6 +60,7 @@ public class LiPhoneInfo {
      * SIM_STATE_PUK_REQUIRED     锁定状态，需要用户的PUK码解锁 3
      * SIM_STATE_NETWORK_LOCKED   锁定状态，需要网络的PIN码解锁 4
      * SIM_STATE_READY            就绪状态 5
+     *
      * @return
      */
 
@@ -74,7 +75,7 @@ public class LiPhoneInfo {
 
     /**
      * MCC+MNC
-     *
+     * <p/>
      * MCC：Mobile Country Code，移动国家码，共3位. MNC:Mobile NetworkCode，移动网络码，共2位.
      * 中国国际移动码为460. 移动的代码为00和02，联通的代码为01，电信的代码为03
      */
@@ -89,7 +90,7 @@ public class LiPhoneInfo {
 
     /**
      * 获取网络类型
-     *
+     * <p/>
      * 联通的3G为UMTS或HSDPA，移动和联通的2G为GPRS或EGDE，电信的2G为CDMA，电信的3G为EVDO
      */
     public static NetworkType getCurrentNetworkType(Context context) {
@@ -215,5 +216,19 @@ public class LiPhoneInfo {
         return result;
     }
 
+
+    public static String getAppKey(Context context) {
+        String key = "";
+        try {
+            ApplicationInfo info = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+            if (info != null) {
+                key = info.metaData.getString("cnxad_appkey");
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            return key;
+        }
+
+        return key;
+    }
 
 }

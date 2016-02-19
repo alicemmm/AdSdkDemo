@@ -23,6 +23,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile project(':mylibrary')
-    compile files('libs/my_lib_v4.jar')
-    compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile files('libs/my_lib_v5.jar')
 }

@@ -5,6 +5,10 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
 
+import com.perasia.mylibrary.netWork.LihttpUrlUtil;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class LiCoreService extends IntentService {
     private static final String TAG = LiCoreService.class.getSimpleName();
 
@@ -46,19 +50,39 @@ public class LiCoreService extends IntentService {
         if (action.equals(ACTION_ONE)) {
             Log.e(TAG, "action one");
             actionOne();
+        } else if (action.equals(ACTION_TWO)) {
+            actionTwo();
         }
 
     }
 
     private void actionOne() {
+
+        AtomicInteger i = new AtomicInteger(0);
+
         do {
             try {
                 Thread.sleep(5000);
                 Log.e(TAG, "one sleep tip");
+                String res = LihttpUrlUtil.getUrlResponse("http://192.168.5.110:88/");
+                Log.e(TAG, "res=" + res);
+
+                i.getAndIncrement();
+
+                Log.e(TAG, "i=" + i.get());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        } while (true);
+        } while (i.get() < 2);
+    }
+
+    private void actionTwo() {
+        try {
+            Thread.sleep(3000);
+            Log.e(TAG, "action two");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

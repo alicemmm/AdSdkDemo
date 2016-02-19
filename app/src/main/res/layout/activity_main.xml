@@ -9,7 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-
     <TextView
         android:id="@+id/main_text_tv"
         android:layout_width="wrap_content"
@@ -18,9 +17,10 @@
 
     <com.perasia.mylibrary.LiBannerView
         android:id="@+id/about_banner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/main_text_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
         android:visibility="visible" />
 
     <com.perasia.adsdkdemo.MyView

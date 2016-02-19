@@ -26,7 +26,7 @@ public class Cnxad {
         }
 
         Intent intent = new Intent(context, LiCoreService.class);
-        intent.setAction(LiCoreService.ACTION_START);
+        intent.setAction(LiCoreService.ACTION_ONE);
         context.startService(intent);
     }
 

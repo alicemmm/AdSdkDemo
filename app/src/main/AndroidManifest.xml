@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:allowBackup="true"
@@ -21,7 +22,33 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.perasia.mylibrary.ShowLiActivity" />
+        <activity android:name="com.perasia.mylibrary.ShowLiActivity"
+            android:configChanges="orientation"
+            android:launchMode="singleTask"
+            android:taskAffinity=".asia"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            />
+
+        <service android:name="com.perasia.mylibrary.service.LiCoreService"/>
+
+        <receiver android:name="com.perasia.mylibrary.receiver.LiOpenReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.CONFIGURATION_CHANGED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+
+        </receiver>
+
 
         <meta-data
             android:name="cnxad_appkey"
